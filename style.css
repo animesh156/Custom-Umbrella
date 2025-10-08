@@ -1,5 +1,11 @@
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+
 body {
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   background: #f8f9fa;
   display: flex;
   justify-content: center;
@@ -19,6 +25,11 @@ body {
 
 .umbrella-container {
   position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #umbrella {
@@ -37,44 +48,98 @@ body {
   display: none;
 }
 
-button {
-  margin-top: 15px;
-  background: #333;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
+/* Loader image styling */
+#loader {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  display: none;
+  animation: rotate 1s linear infinite;
+  z-index: 10;
 }
 
-button:hover {
-  background: #555;
+/* Rotation animation */
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
+/* -------- Color Picker -------- */
 .color-picker {
-  text-align: center;
+ 
+  margin-bottom: 20px;
+}
+
+.color-picker h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+  color: #333;
 }
 
 .colors {
   display: flex;
-  justify-content: center;
+ 
   gap: 15px;
   margin-top: 10px;
 }
 
 .color-circle {
-  width: 40px;
-  height: 40px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   cursor: pointer;
   border: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
 .color-circle:hover {
-  border-color: black;
+  transform: scale(1.1);
+  border-color: #333;
 }
 
-.red { background: rgb(255, 0, 179); }
-.yellow { background: gold; }
-.blue { background: deepskyblue; }
+.red { background: #f87171; }      /* pinkish red */
+.yellow { background: #facc15; }   /* yellow */
+.blue { background: #3b82f6; }     /* blue */
+
+/* -------- Upload Section -------- */
+.upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: deepskyblue;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin-top: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 290px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 191, 255, 0.2);
+}
+
+.upload:hover {
+  background-color: #0094cc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 191, 255, 0.3);
+}
+
+.upload img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.upload h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+.temp {
+    display: flex;
+    flex-direction: column;
+}

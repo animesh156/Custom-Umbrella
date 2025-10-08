@@ -1,3 +1,11 @@
+
+// //preload umbrella images
+// const colors = ["pink", "yellow", "blue"];
+// colors.forEach((color) => {
+//   const img = new Image();
+//   img.src = `images/${color}_umbrella.png`;
+// });
+
 const umbrella = document.getElementById("umbrella");
 const logo = document.getElementById("logo");
 const logoInput = document.getElementById("logoInput");
@@ -5,21 +13,19 @@ const uploadBtn = document.getElementById("uploadBtn");
 const colorCircles = document.querySelectorAll(".color-circle");
 const loader = document.getElementById("loader");
 
-
 colorCircles.forEach((circle) => {
   circle.addEventListener("click", () => {
     const color = circle.getAttribute("data-color");
 
     // Hide umbrella and logo, show loader
     umbrella.style.display = "none";
-    logo.style.display = 'none';
+    logo.style.display = "none";
     loader.style.display = "block";
-    uploadBtn.style.backgroundColor = color
+    uploadBtn.style.backgroundColor = color;
 
     // Simulate loading for 1 second
     setTimeout(() => {
       umbrella.src = `images/${color}_umbrella.png`;
-      
 
       // Hide loader, show umbrella again
       loader.style.display = "none";

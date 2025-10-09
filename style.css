@@ -58,6 +58,11 @@ body {
   z-index: 10;
 }
 
+
+.spin {
+animation: rotate 1s linear infinite;
+}
+
 /* Rotation animation */
 @keyframes rotate {
   0% { transform: rotate(0deg); }
@@ -84,8 +89,8 @@ body {
 }
 
 .color-circle {
-  width: 26px;
-  height: 26px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   cursor: pointer;
   border: 2px solid transparent;
@@ -97,9 +102,9 @@ body {
   border-color: #333;
 }
 
-.red { background: #f87171; }      /* pinkish red */
+.pink { background: #e64475; }      /* pinkish red */
 .yellow { background: #facc15; }   /* yellow */
-.blue { background: #3b82f6; }     /* blue */
+.blue { background: #68d3ee; }     /* blue */
 
 /* -------- Upload Section -------- */
 .upload {
@@ -116,15 +121,9 @@ body {
   cursor: pointer;
   width: 290px;
   border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 191, 255, 0.2);
 }
 
-.upload:hover {
-  background-color: #0094cc;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 191, 255, 0.3);
-}
+
 
 .upload img {
   width: 20px;
@@ -142,4 +141,86 @@ body {
 .temp {
     display: flex;
     flex-direction: column;
+}
+
+
+
+.container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* allow wrapping if needed */
+}
+
+
+/* For smaller screens: stack vertically */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .umbrella-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  #umbrella {
+    width: 200px;
+  }
+
+  #logo {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+  }
+
+  .upload {
+    width: 220px;
+    padding: 8px 14px;
+  }
+
+  .colors {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    gap: 15px;
+  }
+
+  .umbrella-container {
+    width: 180px;
+    height: 180px;
+  }
+
+  #umbrella {
+    width: 180px;
+  }
+
+  #logo {
+    width: 40px;
+    height: 40px;
+    bottom: 10px;
+  }
+
+  .upload {
+    width: 180px;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .color-picker h2 {
+    font-size: 18px;
+  }
+
+  .details1 h5 {
+    font-size: 14px;
+  }
+
+  .details1 p {
+    font-size: 10px;
+  }
 }

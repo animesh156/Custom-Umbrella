@@ -22,22 +22,13 @@ const loader = document.getElementById("loader");
 const uploadIcon = document.getElementById("uploadIcon");
 const uploadText = document.getElementById("uploadText");
 
+// ✅ Fix: target the body correctly
+const body = document.body;
+
 // 🎨 Ripple + color change on click
 colorCircles.forEach((circle) => {
   circle.addEventListener("click", (e) => {
     const hexCode = circle.getAttribute("data-color");
-
-    // Ripple effect
-    const ripple = document.createElement("span");
-    ripple.classList.add("ripple");
-    ripple.style.background = `${hexCode}80`; // semi-transparent version of the color
-    const rect = circle.getBoundingClientRect();
-    ripple.style.left = `${e.clientX - rect.left}px`;
-    ripple.style.top = `${e.clientY - rect.top}px`;
-
-     ripple.style.width = ripple.style.height = `${rect.width * 2}px`; // big enough to go outside
-    circle.appendChild(ripple);
-    setTimeout(() => ripple.remove(), 600);
 
     // Update umbrella color
     const colorObj = colors.find(
@@ -51,6 +42,10 @@ colorCircles.forEach((circle) => {
     loader.style.display = "block";
     uploadBtn.style.backgroundColor = hexCode;
 
+    // Change body background smoothly
+    body.style.transition = "background-color 0.6s ease";
+    body.style.backgroundColor = hexCode + "20"; // adds transparency effect
+
     // Simulate color change delay
     setTimeout(() => {
       umbrella.src = `images/${color}_umbrella.png`;
@@ -62,10 +57,10 @@ colorCircles.forEach((circle) => {
   });
 });
 
-// 📂 File upload button click
+//  File upload button click
 uploadBtn.addEventListener("click", () => logoInput.click());
 
-// 📁 File validation & upload preview
+//  File validation & upload preview
 logoInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
   if (!file) return;

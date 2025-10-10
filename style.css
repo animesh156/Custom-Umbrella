@@ -7,17 +7,19 @@ h1, h2, h3, h4, h5, h6, p {
 body {
   font-family: "Poppins", sans-serif;
   background: #f8f9fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+ 
 }
 
 .container {
   display: flex;
-  gap: 40px;
+  justify-content:center;
   align-items: center;
+ gap: 70px;
+  height: 90vh;
+  
 }
+
+
 
 .umbrella-section {
   text-align: center;
@@ -25,15 +27,15 @@ body {
 
 .umbrella-container {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 340px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #umbrella {
-  width: 250px;
+  width: 300px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -98,8 +100,8 @@ animation: rotate 1s linear infinite;
 }
 
 .color-circle:hover {
-  transform: scale(1.1);
-  border-color: #333;
+  transform: scale(1.2);
+  border-color: var(--circle-color);
 }
 
 .pink { background: #e64475; }      /* pinkish red */
@@ -110,7 +112,7 @@ animation: rotate 1s linear infinite;
 .upload {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content:flex-start;
   gap: 10px;
   background-color: deepskyblue;
   color: white;
@@ -120,38 +122,30 @@ animation: rotate 1s linear infinite;
   font-weight: 500;
   cursor: pointer;
   width: 290px;
-  border-radius: 8px;
+  border-radius: 2px;
 }
 
 
 
 .upload img {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
+  
 }
 
 .upload h4 {
-  margin: 0;
+  margin-left: 45px;
   font-size: 15px;
   font-weight: 600;
 }
 
 
-.temp {
+.color-section {
     display: flex;
     flex-direction: column;
 }
 
-
-
-.container {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap; /* allow wrapping if needed */
-}
 
 
 /* For smaller screens: stack vertically */
